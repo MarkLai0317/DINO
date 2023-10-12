@@ -1,7 +1,8 @@
 # environment
 ubuntu 20.04
+cuda 11.7
+python 3.8.10
 
-python 
 # install
 
 1. create .venv environment
@@ -14,7 +15,9 @@ source .venv/bin/activate
 pip install numpy==1.22.4
 pip install wheel
 pip install yapf==0.40.1
+pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu117
 pip install -r requirements.txt
+pip install torchmetrics
 ```
 
 3. compiling CUDA operators
@@ -80,10 +83,14 @@ bash scripts/DINO_train_swin.sh ./data ./pretrain_model 0
 bash scripts/DINO_eval.sh ./data [path to checkpoints]
 ```
 example:
-```
+
 ```
 bash scripts/DINO_eval.sh ./data result_model/checkpoint0049.pth
 ```
+
+2. run using evaluate.py
+```
+python evaluate.py ./val_result.json ./data/annotations/instances_val2017.json
 ```
 
 
