@@ -19,6 +19,7 @@ pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 torchaudio==2.0.2 --ind
 pip install -r requirements.txt
 pip install torchmetrics
 pip install ipykernel
+pip install opencv-python
 ```
 
 3. compiling CUDA operators
@@ -79,17 +80,9 @@ bash scripts/DINO_train_swin.sh ./data ./pretrain_model 0
 ```
 
 # check the prediction of validation data. there are two method
-1. run with data and checkpoint
-```
-bash scripts/DINO_eval.sh ./data [path to checkpoints]
-```
-example:
 
-```
-bash scripts/DINO_eval.sh ./data result_model/checkpoint0049.pth
-```
 
-2. run using evaluate.py
+* run using evaluate.py
 ```
 python evaluate.py ./val_result.json ./data/annotations/instances_val2017.json
 ```
