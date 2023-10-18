@@ -3,6 +3,9 @@ ubuntu 20.04
 cuda 11.7
 python 3.8.10
 
+# download folders
+please go to https://drive.google.com/drive/folders/1uPKYA39GaigZGAuTakJQuCHt10RbRC6s?usp=sharing to download pretrain_model folder and result_model folder to the root directory of this repo
+
 # install
 
 1. create .venv environment
@@ -54,8 +57,8 @@ cd ../../..
 ```
 
 
-# re-generaate Output_json_for_test.json
-3. open inference_and_visualization.ipynb and press run all and then it will generate Output_json_for_test.json if you want to recreate my result
+# re-generate Output_json_for_test.json
+3. open inference_and_visualization.ipynb and press run all and then it will generate Output_json_for_test.json if you want to recreate my output result. Remember to use .venv as kernel
 
 # train model
 
@@ -90,7 +93,7 @@ python evaluate.py ./val_result.json ./data/annotations/instances_val2017.json
 
 # test my predict Output_json_for_test.json
 ```
-python evaluate.py Output_json_for_test.json [test_truth_path]
+python evaluate.py output.json [test_truth_path]
 ``` 
 
 
